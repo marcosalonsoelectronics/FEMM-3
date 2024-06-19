@@ -1,0 +1,13 @@
+for i=0.4,4,0.2 do
+	mi_modifycircprop("Coil", 1, i)
+	mi_analyze()
+	mi_loadsolution()
+	mo_selectblock(12.4,0)
+	mo_selectblock(7.4,2.3)
+	mo_selectblock(17.4,2.3)
+	mo_selectblock(15.3,10.9)
+	w=mo_blockintegral(2)
+	L=2*w/i^2
+	print(i, L)
+end
+
